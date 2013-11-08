@@ -1,4 +1,5 @@
 public class Game {
+	
 	/**볼링에서 최대 투구 횟수는 21회*/
 	int rolls[] = new int[21];
 	int iIndex = 0;
@@ -9,7 +10,7 @@ public class Game {
 	}
 
 	/**최종적 스코어 취득 수행*/
-	public int score() {
+	public int score(){
 		int score = 0;
 		int index = 0;
 		/**9프레임 까지는 프레임 단위 연산 수행*/
@@ -25,10 +26,12 @@ public class Game {
 							score += 10 + framesCore(index+1) + framesCore(index+2);
 						}
 						/**사실 이거 보기좋은 코드라고 하기힘들겠는데*/
-					}else
+					}else{
 						score += 10 + framesCore(index+1) + bonusScoreOfSpare(index +1);
-				}else
+					}
+				}else{
 					score += 10 + framesCore(index + 1);
+				}
 				
 			}
 			else if(isSpare(index)){/**그것도 아니면 스페어인가?*/
@@ -46,19 +49,19 @@ public class Game {
 		return score;
 	}
 
-	private boolean isStrike(int index) {
+	private boolean isStrike(int index){
 		return rolls[index*2]== 10;
 	}
 
-	private int bonusScoreOfSpare(int index) {
+	private int bonusScoreOfSpare(int index){
 		return rolls[(index + 1) *2];
 	}
 
-	private boolean isSpare(int index) {
+	private boolean isSpare(int index){
 		return framesCore(index) == 10;
 	}
 
-	private int framesCore(int index) {
+	private int framesCore(int index){
 		return rolls[index *2] + rolls[index *2 + 1];
 	}
 	
