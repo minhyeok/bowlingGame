@@ -14,12 +14,12 @@ public class Game {
 		int score = 0;
 		int index = 0;
 		/**9프레임 까지는 프레임 단위 연산 수행*/
-		for(index = 0; index < 9; index ++ ){
+		for(index=0;index<9;index ++){
 			if(isStrike(index)){ /**스트라이크 인가?*/
 				if(isStrike(index+1)){ /**다음 프레임도 스트라이크인가?*/
 					if(isStrike(index+2)){ /**그 다음 프레임도...?*/
 						if(index == 7){ /**8프레임 회차 계산*/
-							score += 10 + framesCore(index+ 1) + rolls[(index+2)*2];
+							score+=10+framesCore(index+ 1)+rolls[(index+2)*2];
 						}else if(index == 8){ /** 9프레임 회차 계산*/
 							score += 10 + rolls[(index+1)*2] + rolls[(index+2)*2];
 						}else{ /**일반적인 경우*/
