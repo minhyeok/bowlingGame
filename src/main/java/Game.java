@@ -1,5 +1,9 @@
+/**
+ * This class for TDD study
+ * @author MH Lee
+ * @version 0.1
+ * */
 public class Game {
-
 	/** 볼링에서 최대 투구 횟수는 21회 */
 	int rolls[] = new int[21];
 	int iIndex = 0;
